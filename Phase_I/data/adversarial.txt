@@ -1,0 +1,36 @@
+# Adversarial Dataset for Knapsack & Sorting Analysis
+# Highlights algorithmic edge cases:
+# 1. 0/1 Knapsack: Greedy ratio chooses S1 (cost 30, ben 33, ratio 1.10) -> total benefit 33.
+#    Optimal DP chooses S2 + S3 (cost 25+25=50, benefit 25+25=50) -> total benefit 50!
+# 2. Road network with bottleneck node.
+
+[META]
+nodes=6 budget=50
+
+[NODES]
+0 HubAlpha
+1 HubBeta
+2 NodeGamma
+3 NodeDelta
+4 NodeEpsilon
+5 NodeZeta
+
+[ROADS]
+0 1 5
+0 2 10
+1 3 15
+2 4 20
+3 5 25
+4 5 10
+
+[STATIONS]
+101 0 30 150 4 33
+102 1 25 100 3 25
+103 2 25 100 3 25
+104 3 45 200 4 40
+
+[VEHICLES]
+1 Prototype-X 30.0 120.0 50.0 0.25
+
+[TRIPS]
+1 0 5 800 930 1

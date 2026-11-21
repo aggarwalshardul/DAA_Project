@@ -1,0 +1,59 @@
+# Small City Dataset for EV Planning (~8 Nodes)
+# File format:
+# [META]
+# nodes=<count> budget=<value>
+# [NODES]
+# <id> <name>
+# [ROADS]
+# <from_node> <to_node> <distance_km>
+# [STATIONS]
+# <id> <node_id> <install_cost> <power_kw> <ports> <benefit_score>
+# [VEHICLES]
+# <id> <model_name> <battery_capacity_kwh> <range_km> <current_charge_pct> <consumption_kwh_per_km>
+# [TRIPS]
+# <id> <source_node> <dest_node> <start_time> <end_time> <vehicle_id>
+
+[META]
+nodes=8 budget=80
+
+[NODES]
+0 Downtown
+1 TechZone
+2 CentralPark
+3 StationNorth
+4 WestEnd
+5 EastPort
+6 Airport
+7 Suburbia
+
+[ROADS]
+0 1 12
+0 2 15
+1 3 18
+1 4 22
+2 4 14
+2 5 28
+3 6 10
+4 6 25
+4 7 16
+5 7 20
+6 7 15
+
+[STATIONS]
+101 0 30 150 4 85
+102 1 25 100 3 70
+103 3 35 180 6 90
+104 5 20 60  2 45
+105 6 40 200 6 95
+106 7 15 50  2 40
+
+[VEHICLES]
+1 EcoSedan 40.0 200.0 85.0 0.20
+2 CityPulse 28.0 140.0 90.0 0.20
+3 FastCourier 60.0 280.0 70.0 0.22
+
+[TRIPS]
+1 0 6 800 915 1
+2 1 7 900 1010 2
+3 2 6 1130 1245 1
+4 5 0 1400 1530 3
